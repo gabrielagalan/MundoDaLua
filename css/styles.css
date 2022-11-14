@@ -1,0 +1,734 @@
+/* Geral - tudo que não tem classe */
+:root {   /* declarar as variáveis */
+    --main-color:#d92123; /* definimos que a cor principal é essa do hexadecimal */
+    --primary-text-color: #fff;
+    --secondary-text-color: #191919;
+    --secondary-color: #868686;
+    --tertiary-color: #eff3f4;
+    --secondary-bg-color: #5c1011;
+}
+
+* {
+    font-family: "Lato";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*isso faz com que elementos que ultrapassariam o tamanho permitido, não ultrapassem */
+}
+
+a {
+    text-decoration: none;/*tiramos o hiperlink */
+}
+
+img {
+    width: 100%; /*dizemos que todas as imagens terão seu tamanho em 100% em relação ao elemento pai*/
+}
+
+input[type="submit"] {  /*faz com que o cursos no formul[ario, vire uma mãozinha para parecer evento clicável*/
+    cursor: pointer 
+}
+
+i {
+    background-color: var(--main-color);
+    color: var(--primary-text-color);
+    font-size: 2.5rem; /*rem baseado ao elemento do HTML, ou seja, acompanha o tamanho */
+    padding: 2rem;/*neste caso é a cor de fundo em relação ao ícone */
+}
+
+/*Cabeçalho e Banner*/
+
+#header {
+    min-height: 90vh; /*vh está relacionado a altura da tela - 90% da largura da tela */
+    background-image: url("../img/banner06.jpg");
+    background-size: cover; /* otimizar a imagem para área que tem a disposição, ou seja, o retangulo de banner*/
+    background-position: center;
+    color: var(--primary-text-color);
+    margin-bottom: 2rem; /*afastando os elementos para não grudarem*/
+    position:relative /* se tiver um elemento em posição absoluta o container do objeto relativo consegue se orientar - quadrado vermelho*/
+}
+
+#inner-header {
+    display: flex; /*os itens dentro do container podem ser posicionados de maneira mais simples*/
+    justify-content: space-between; /*espa;o entre si*/
+    align-items: center; /*o centro de um item é igual a o outro*/
+}
+
+#marca {
+    background-color: var(--main-color);
+    padding: 1rem;
+}
+
+#navbar {
+    display:flex;
+    gap: 4rem; /*nessa regra GAP - os itens se espaçam de maneira igual*/
+    text-transform: uppercase; /*transforma em caixa alta*/
+    margin-right: 2rem; /*faz com que o "contato" não fique grudado na página*/
+}
+
+/*Precisamos tratar o link que está na NAVBAR - como fazer um seletor para links que estao dentro de outro? SER ESPECÍFICO */
+
+#navbar a {
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+
+.banner.ativo {
+    opacity: 1; /*mostrar banner ativo*/
+}
+
+.banner {
+    max-width: 50%; /*garantindo que não passe da metade da página*/
+    padding: 4rem;
+    opacity: 0; /*esconde banner inativo*/
+    position: absolute; /* criamos dois banner mas precisamos que estejam na mesma posição*/
+    transition: 0.6s;
+}
+
+.banner h2 {
+    font-size: 4rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2;/*aqui digo que a posição dele é por cima em relação ao z-index 1 - só que para usar Z-INDEX precisa definir posição*/
+    /* EIXO Z: vem de profundidade*/
+}
+
+.banner p {
+    font-size: 1.5rem;
+}
+
+.quadrado {
+    display: block; /*significa que será um elemento inline (NÃO ENTENDI) */
+    width: 150px;
+    height: 150px;
+    background-color: var(--main-color);
+    position: absolute; /*assim ele fica no mesmo lugar do absolute passado - TEXTO - Só que neste caso ele ficou por cima*/
+    z-index: 1; /*aqui digo que a posição dele é por baixo em relação ao z-index 2*/
+    /* EIXO Z: vem de profundidade*/
+    /*Só que para ele não ficar tão na margem do escrito vamos ajustar o tamanho */
+    left: 20px;
+    top: 40px;
+}
+
+.pontos{
+    display: flex;
+    gap: 2rem; /*nessa regra GAP - os itens se espaçam de maneira igual*/
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+
+}
+
+.ponto{ /*coloca essa div DOT para que eles apareçam*/
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    /*porém até aqui os quadradinhos vão ficar em cima do quadradão - pois quadrado está em absoluto, então lá em cima em PONTOS vamos dizer a posição*/
+}
+
+/* precisa lembrar que o ponto que é ativo, tem outra cor*/
+
+.ponto.ativo {
+    background-color: var(--main-color);
+}
+
+/*Áreas de Atuação */
+
+.text-image-section {
+    display: flex; /*para deixar a imagem do lado do texto*/
+    flex-wrap: wrap; /* se a largura exceder uma div vai para baixo da outra*/
+    gap: 2rem; /* gap serve para afastar um item do outro*/
+}
+
+.text-container {
+    flex:2 1 0; /* estamos dizendo que ele é maior que os outros dois, o quanto ele diminui e 0 de largura base*/
+    display: flex;
+    gap: 2rem; /* gap serve para afastar um item do outro*/
+    flex-direction: column; /* o flex faz com que todos fiquem lado a lado e queremos colunas não linha*/
+    justify-content: center; /*texto no centro*/
+    text-align: right; /*no modelo as imagens ficam proximas a imagem*/
+}
+
+.section-subtitle {
+    text-transform: uppercase; /*letras maiúsculas*/
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.section-title {
+    color: var(--secondary-text-color);
+}
+
+.btn {
+    padding: 1.2rem 1.8rem; /*colocar o formato de retangulo no botão*/
+    background-color: var(--main-color);
+    align-self: end; /*alinhar ao fim pq no flex precisa indicar*/
+    text-transform: uppercase;
+    font-weight: bold; /*negrito*/
+    font-size: 1.4rem;
+    color: var(--primary-text-color);
+
+}
+
+.image-container {
+    flex: 1 1 300px; /*text vai ser o dobro da imagem*/
+    position: relative; /* pq queremos que o icone da imagem fique absoluto-imagem é a referência*/
+}
+
+.image-container i {
+    position: absolute; /* pq queremos que o icone da imagem fique absoluto-imagem é a referência*/
+}
+
+#outros-servicos {
+    width: 100%; /*para colocar que ele entenda que é a coluna que tem que ser respeitada*/
+    display: flex;
+    gap: 2rem; /* gap serve para afastar um item do outro*/
+    padding: 2rem; /*espaçamento lateral*/
+}
+.servicos {
+    position: relative; /* pq queremos que o icone da imagem fique absoluto-imagem é a referência*/
+}
+.servicos i{
+    position: absolute;/* pq queremos que o icone da imagem fique absoluto-imagem é a referência*/
+    top: 0;
+    left: 0; /* ancorando do lado da imagem em cima*/
+    padding: 1rem;/*icone está grande para diminuir*/
+    font-size: 1.5rem;/*icone está grande para diminuir*/
+}
+
+.servicos-inf {
+    background-color: var(--tertiary-color);
+    padding: 2rem 1.4rem;
+    min-height: 250px; /*não importa o tamanho da imagem ou conteúdo, eles sempre estarão iguais*/
+    margin-top: -3rem; /*para o texto subir um pouquinho a imagem*/
+    z-index: 2; /*para imagem não ficar por cima*/
+    position: relative; /*faz o item vir para frente*/
+}
+
+.servicos h4 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+
+}
+/*Sobre nós(about)*/
+
+#about {   /*começar pelo ID PAI da sessão*/
+    display: flex;
+    flex-wrap: wrap; /*para quando for fazer a responsividade, quebrar para a linha debaiox*/
+    align-items: center;
+    gap:2rem; /*distanciar os itens um do outro*/
+} 
+#about-text {
+    background-image: url("../img/fundo04.jpg");
+    background-size: cover; /*tipo dar um zoom*/
+    background-position: center;
+    color: var(--primary-text-color);
+    flex: 1 1 0; /*ter a metade da largura*/
+    display: flex;
+    flex-direction: column; /*colunas ficam uma lado a lado*/
+    justify-content: center;
+    gap: 2rem; /*espaço entre itens*/
+    padding: 4rem 3rem; /*espaçamento interno*/
+}
+/*titulo ainda não tinha mudado, precisamos forçar juntando ID e CLASSE*/
+#about-text .section-subtitle, 
+#about-text .section-title {
+    color: var(--primary-text-color);
+}
+
+#about-text i {
+    background-color: transparent; /*tira margem do item*/
+}
+.about-description {
+    display: flex;
+    align-items: center;
+}
+.about-description h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+#about-data {
+    flex: 1 1 0; /*mesma largura*/
+    display: flex;
+    flex-wrap: wrap;/*para quando for fazer a responsividade, quebrar para a linha debaixo*/
+    padding: 2rem;
+}
+
+#about-data .data {
+    width: 50%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem; 
+    /*quuando fomos alinhar lá embaixo os quatro ícones, ficou torto, vamos ajustar colocando isso*/
+    margin-top: -1px;
+    margin-left: -1px;
+}
+/*espaçamento interno dos itens*/
+    /*para que os elementos tenham a mesma distância entre si e fique com a "cruz" certinha no meio,
+    faremos a borda debaixo e direita do primeiro item e borda de cima e esquerda do último item*/
+/*precisamos selecionar só o primeiro item - usaremos o pseudoseletor*/
+
+#about-data .data:first-child { /*primeiro filho*/
+    border-bottom: 1px solid var(--secondary-text-color);
+    border-right: 1px solid var(--secondary-text-color);
+}
+
+/*agora o último item*/
+
+#about-data .data:last-child { /*último filho*/
+    border-top: 1px solid var(--secondary-text-color);
+    border-left: 1px solid var(--secondary-text-color);
+}
+
+#about-data .data i {
+    /*icone transparente na cor vermelha*/
+    background-color: transparent;
+    color: var(--main-color);
+    font-size: 4rem;
+    padding: 0; /*icone perto do texto*/
+}
+
+#about-data .number {
+    font-size: 4rem;
+    font-weight: 900; /*bold=700 o 900=bolder*/
+}
+
+#about-data .text {
+    text-transform: uppercase;
+}
+
+/*Depoimentos*/
+
+#testimonials {
+    display: flex;
+    align-items: center;
+}
+#testimonial-info {
+    padding: 3rem;
+}
+.author {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: right;
+    gap: 1rem;
+}
+
+.author .author-name {
+    text-transform: uppercase;
+    color: var(--main-color);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    justify-content: end;
+}
+
+.author .author-job {
+    color: var(--secondary-text-color);
+    justify-content: end;
+}
+
+.author img {
+    width: 100px;
+    height: 100px;
+    align-items: right;
+    justify-content: start;   
+    margin-left: auto; 
+}
+
+/*Colaboradores*/
+
+#team {
+    position: relative; /*square tem posição absoluta, então essa vai ser a referência*/
+    margin-bottom: 2rem;    
+}
+
+.team-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#team h2 {
+    font-size: 3rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative; /* pq depois preciso mexer no z-index*/
+    z-index: 2; /*texto sobre o quadrado*/
+}
+
+#team h2 span {
+    color: var(--main-color);
+}
+
+#team .quadrado {
+    background-color: var(--tertiary-color);
+    width: 100px;
+    height: 100px;
+    left: 50%; /*alinhamento do quadrado no meio - ponta do quadrado*/
+    margin-left: -50px; /*subtraio a metade que ele desconsidera e ele centraliza*/
+    top: -25px; /*para que vá para cima do texto*/
+    z-index: 1; /*texto sobre o quadrado*/
+}
+
+.employees {
+    display: flex; /*para colocar lado a lado*/
+    gap: 2rem; /*afastar um do outro*/
+    padding: 2rem;
+    text-align: center; /*titulo alinhado no meio*/
+    justify-content: space-around;    
+}
+
+.employee-name {
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.employees > .employee > img { /* MAIOR QUE (>) Pegar o atributos que estejam dentro do pai tal*/
+    max-height: 441px;
+}
+
+/*Contato*/
+
+#contact {
+    background-color: var(--main-color);
+    gap: 0; /*queremos elementos juntos*/
+    padding-bottom: 5rem; /*o fundo ultrapassa um pouco a imagem*/
+}
+#contact-info {
+    position: relative; /*referencia para icone*/
+    text-align: left;
+    padding: 3rem;
+    flex: 1 1 0;    
+}
+
+#contact-info .section-subtitle {
+    color: var(--primary-text-color);
+}
+
+#contact-info i {
+    position: absolute; /*referencia para icone dada como relative*/
+    top: 0;
+    left: 0; /*ancorado na esquerda em cima*/
+    background-color:var(--primary-text-color);
+    color: var(--main-color);
+}
+
+#contact-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-info .form-control {
+    display: flex;
+    gap: 1rem;
+}
+
+#contact-info input,
+#contact-info textarea {
+    flex: 0.5;
+    padding: 1rem;
+    border: none;
+}
+
+#contact-info .btn {
+    align-self: start; /*no começo*/
+    border: 2px solid var(--primary-text-color); /*colocar borda no botão*/
+    font-size: 1.2rem;
+    transition: 0.4s; /*para que quando a cor seja invertida, seja sutil*/
+}
+
+/*como fazer com que quando o mouse estiver em cima, as cores sejam invertidas*/
+
+#contact-info .btn:hover {
+    background-color: var(--primary-text-color);
+    color: var(--main-color);
+}
+
+/* Rodapé */
+
+#footer {
+    color: var(--primary-text-color);
+    background-color: var(--secondary-bg-color);
+    display: flex;
+    justify-content: space-around; /*espaçar igualmente as colunas*/
+    padding: 3rem 3rem 5rem; /*topo, esquerda e direita, embaixo*/
+}
+
+#footer i {
+    font-size: 1rem;
+    padding: 0.3rem;
+}
+
+#footer a {
+    color:  var(--primary-text-color);
+} /*ajustar os links do footer*/
+
+/*embora estejam espaçados igualmente, é preciso limitar o tamanho*/
+.contact-inf,
+.links-container {
+    width: 20%;
+}
+
+.footer-marca {
+    margin-bottom: 2rem; /*afastar dos demais itens*/
+}
+
+.footer-marca h2 {
+    background-color: var(--main-color);
+    margin-bottom: 0.5rem;
+    padding: 1rem; /*afastar das extremidades*/
+}
+
+.contact-inf p {
+    margin-bottom: 1rem;
+
+} 
+
+.contact-inf p i {
+    background-color: transparent;
+    color: var(--main-color);
+    padding: 0;
+} 
+
+.redes-sociais p {
+    margin-bottom: 1rem;
+}
+
+.social {    
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;   
+}
+
+#footer .social i {
+    padding: 1rem;
+}
+
+.links-container h4 {
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+.links-container nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.links-container nav a {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--secondary-color); /* bordar embaixo */
+}
+
+.phone-number {
+    display: flex;
+    border: 1px solid var(--main-color);
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.phone-info {
+    color: var(--secondary-color);    
+}
+/*Mobile Navbar */
+#menu, #close-menu {
+    font-size: 2rem;
+    padding: 1rem;
+}
+#close-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#mobile-navbar {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0, 0.95); /*transparência*/
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    transition: 0.4s;
+    z-index: 5; /*posicionar a frente dos conteudos*/
+}
+
+#mobile-navbar.menu-active {
+    left: 0;
+}
+
+#mobile-navbar a {
+    color: var(--primary-text-color);
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--main-color); /*bordar embaixo*/
+}
+
+/* Responsividade */
+@media (max-width: 450px) {
+    /*Geral retomando*/
+    body {
+        overflow-x: hidden; /*some com o scroll, tudo que passa da tela não contabiliza*/
+    }
+
+    i {
+        /*ajustar icones*/
+        padding: 1.5rem;
+        font-size: 2rem;
+    }
+    
+    /*navbar*/
+    #navbar {
+        display: none; /*Mobile*/
+    }
+
+    #menu,
+    #close-menu {
+        display: block; /*Para mobile aparecer e clicar*/
+    }
+
+    #banner {
+        max-width: 100%; /*ocupa tudo de acordo com a tela*/
+        padding: 4rem 2rem ;
+    }
+
+    #banner h2 {
+        font-size: 3rem;
+    }
+
+    #banner p {
+        font-size: 1rem;
+    }
+
+    /*geralmente botões ocupam a largura toda*/
+    /*Áreas de Atuação*/
+    .btn {
+        align-self: initial; /*para tomar toda a largura*/
+    }
+
+    .image-container {
+        flex: 1 1 100%; /*imagens ocuparão 100% da largura*/
+    }
+
+    #outros-servicos {
+        flex-wrap: wrap;
+    }
+
+    /*Sobre Nós(about)*/
+    #about {
+        gap: 0;
+
+    }
+
+    #about-text,
+    #about-data {
+        flex: 1 1 100%;
+    }
+
+    #about-description {
+        gap: 1rem;
+    }  
+    
+    #about-description i {
+        padding: 0;
+        min-width: 40px;
+    }  
+    
+    #about #about-data .data {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid var(--secondary-text-color);
+    }
+
+    /*Depoimentos */
+    #text-container {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    #testimonials > #testimonial-info {
+        text-align: center;
+        padding: 2rem;
+    }
+
+   #testimonial-info > .author > img {
+        margin-right: auto;        
+    }
+
+    /*Colaboradores */
+    #team {
+        margin-top: 2rem;
+    }
+
+    #team h2 {
+        font-size: 2.5rem;
+    }
+
+    #team > .employees {
+        flex-wrap: wrap;
+    }
+
+    /*Contato*/
+    #contact {
+        padding-bottom: 0;
+    }
+
+    #contact-info {
+        padding: 7rem 1rem;
+    }
+
+    #contact-info .form-control {
+        flex-direction: column;
+    }
+
+    #contact-info .btn {
+        align-self: auto;
+    }
+
+    /*Rodapé*/
+    #footer {
+        flex-wrap: wrap;
+    }
+
+    #footer i {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .contact-inf,
+    .links-container {
+        width: 100%;
+    }
+
+    .footer-marca {
+        text-align: center;
+    }
+
+    .social {
+        margin-bottom: 3rem;
+    }
+
+    .links-container {
+        margin-bottom: 1rem;
+    }
+
+    .links-container h4 {
+        margin-bottom: 1.5rem;
+    }
+
+}
+       

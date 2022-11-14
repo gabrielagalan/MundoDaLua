@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo da Lua</title>
+    <link rel="shortcut icon" href="img/lua-icon.png" type="image/x-icon"/>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https: //fonts.googleapis.com/css2? família= Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900 & display=swap" rel="stylesheet">
+    <!--Bootstrap Icons- permite que usemos icones em nosso projeto-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!--Estilos-->
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+    <!--Cabeçalho e Banner-->
+    <!--Colocar a divi + # já vira ID-->
+    <header id="header">
+        <div id="inner-header">
+            <h2 id="marca">Mundo da Lua</h2>
+            <nav id="navbar">
+                <a href="#header">Início</a> <!--Para link utiliza tag "a" ancora-->
+                <a href="#expertise">Serviços</a>
+                <a href="#about">Sobre</a>
+                <a href="team">Time</a>
+                <a href="contact">Contato</a>
+            </nav> <!--Colocar itens de navegação-->
+            <!--Menu Mobile colocaremos aqui depois-->
+            <i class="bi bi-list" id="menu"></i>   
+            <nav id="mobile-navbar">
+                <i class="bi bi-x-lg" id="close-menu"></i>
+                <a href="#header">Início</a> <!--Para link utiliza tag "a" ancora-->
+                <a href="#expertise">Serviços</a>
+                <a href="#about">Sobre</a>
+                <a href="team">Time</a>
+                <a href="contact">Contato</a>
+            </nav>
+        </div>
+        <div class="banner ativo"> 
+            <span class="quadrado"></span>
+            <h2> Melhores experts do mundo</h2>
+            <p> Os astronautas mais bem qualificados estão aqui, agende uma reunião e conheça nosso Time</p>
+        </div>
+        <div class="pontos">
+            <div class="ponto ativo"> </div>
+            <div class="ponto"> </div>
+            <div class="ponto"> </div>
+        </div>
+    </header>
+    <!--Áreas de Atuação-->
+    <main id="expertise" class="text-image-section">
+        <div id="expertise-inf" class="text-container">
+            <p class="section-subtitle"> Nossas áreas de atuação</p>
+            <h3 class="section-title">
+                Nossos especialistas podem ajudar você com seus voos em gravidade zero, idas a Lua, dica de primeira viagem e o que mais precisar.
+            </h3>
+            <a href="#" class="btn">
+                Saiba mais
+            </a> <!--botão que levaria para a página SAIBA MAIS - href é o link para onde vai-->
+        </div>
+        <div id="expertise-image-container" class="image-container">
+            <i class="bi bi-people-fill"></i>
+            <img src="img/team08.png" alt="Equipe de Astronautas"> <!--descrever a imagem em texto, sempre fazer isso-->
+        </div>
+        <div id="outros-servicos">
+            <div class="servicos"> 
+                <img src="img/primeiraviagem01.jpg" alt="Primeira Viagem"> <!--descrever a imagem em texto, sempre fazer isso-->
+                <i class="bi bi-airplane"></i>
+                <div class="servicos-inf">
+                    <h4>Faça sua primeira viagem conosco</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet doloremque unde alias totam nemo nesciunt laudantium repellat ratione laboriosam? Placeat tenetur porro, excepturi et illo saepe sit odit harum eos?</p>
+                </div>
+            </div>
+            <div class="servicos"> 
+                <img src="img/servico06.jpg" alt="Gravidade"> <!--descrever a imagem em texto, sempre fazer isso-->
+                <i class="bi bi-cloud-upload-fill"></i>
+                <div class="servicos-inf">
+                    <h4>Saiba sobre voos em gravidade zero</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet doloremque unde alias totam nemo nesciunt laudantium repellat ratione laboriosam? Placeat tenetur porro, excepturi et illo saepe sit odit harum eos?</p>
+                </div>
+            </div>
+            <div class="servicos"> 
+                <img src="img/servico04.jpg" alt="Dicas da Viagem"> <!--descrever a imagem em texto, sempre fazer isso-->
+                <i class="bi bi-tools"></i>
+                <div class="servicos-inf">
+                    <h4>Dicas e curiosidades para sua viagem</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet doloremque unde alias totam nemo nesciunt laudantium repellat ratione laboriosam? Placeat tenetur porro, excepturi et illo saepe sit odit harum eos?</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--Sobre nós(about)-->
+    <!--De menor importância-->
+    <section id="about">
+        <div id="about-text">
+            <p class="section-subtitle">Sobre nós</p>
+            <h3 class="section-title">
+                Uma empresa que tem o foco no cliente, aconselhamos da melhor forma conseguindo as melhores experiências
+            </h3>
+            <div class="about-description">
+                <i class="bi bi-award"></i>
+                <div>
+                    <h4>Astronautas atualizados</h4>
+                    <p>Nós promovemos treinamentos mnsais a todos os nossos colaboradores</p>
+                </div>
+            </div>
+            <div class="about-description">
+                <i class="bi bi-moon-stars-fill"></i>
+                <div>
+                    <h4>Conhecimento sobre Planetas</h4>
+                    <p>Nossos colaboradores sabem tudo sobre a galáxia, dominando sobre o assunto</p>
+                </div>
+            </div>
+        </div>
+        <div id="about-data">
+            <div class="data">
+                <i class="bi bi-person"></i>
+                <p class="number">50</p>
+                <p class="text">Astronautas</p>
+            </div>
+            <div class="data">
+                <i class="bi bi-check-all"></i>
+                <p class="number">789</p>
+                <p class="text">Viagens a Lua</p>
+            </div>
+            <div class="data">
+                <i class="bi bi-building"></i>
+                <p class="number">999</p>
+                <p class="text">Clientes</p>
+            </div>
+            <div class="data">
+                <i class="bi bi-trophy"></i>
+                <p class="number">7</p>
+                <p class="text">Prêmios mundiais</p>
+            </div>
+        </div>
+    </section>
+    <!--Depoimentos-->
+   <section id="testimonials" class="text-image-section">
+    <div id="testimonial-info" class="text-container">
+        <p class="section-subtitle">Depoimentos de Clientes</p>
+        <h3 class="section-title">
+            A Mundo da Lua me trouxe uma experiência inimaginável!  
+        </h3>
+        <div class="author">
+            <div class="author-info">
+                <p class="author-name">Matt Damon</p>
+                <p class="author-job"> CEO de Interestelar</p>
+            </div>  
+            <img src="img/depoimento02.jpg" alt="depoimento do Matt"/> <!--sempre colocar alt de descrição-->         
+        </div>        
+        <h3 class="section-title">
+            A melhor e única empresa que faz seu sonho virar realidade, já conhecia Marte, mas não a Lua! Eu conheci a Lua através da Mundo da Lua!   
+        </h3>
+        <div class="author">
+            <div class="author-info">
+                <p class="author-name">Jim McConnell</p>
+                <p class="author-job"> Gerente de Missão Marte</p>
+            </div> 
+            <img src="img/depoimento05.jpg" alt="depoimento do Brandon"/> <!--sempre colocar alt de descrição-->           
+        </div>        
+    </div>
+    <div id="testimonial-image-container" class="image-container">
+        <i class="bi bi-quote"></i>
+        <img src="img/depomento06.jpg" alt="Depoimento"/>
+    </div>
+   </section>
+   <!--Colaboradores-->
+   <section id="team">
+    <span class="quadrado"></span>
+    <h2>
+        A <span>Mundo da Lua</span> tem um time de especialistas a sua disposição <!--Qdo um texto dentro da frase muda o estilo-->
+    </h2>
+    <div class="employees">
+        <div class="employee">
+            <img src="img/wiki01.jpg" alt="Astronauta 01"/>
+            <p class="employee-name">XX 01</p>
+            <p class="employee-job"> Comandante de Foguete</p>
+        </div>
+        <div class="employee">
+            <img src="img/wiki02.jpg" alt="Astronauta 02"/>
+            <p class="employee-name">XX 01</p>
+            <p class="employee-job"> Especialista em missões</p>
+        </div>
+        <div class="employee">
+            <img src="img/wiki03.jpg" alt="Astronauta 03"/>
+            <p class="employee-name">XX 01</p>
+            <p class="employee-job"> Planejador de rota astronáutica</p>
+        </div>
+        <div class="employee">
+            <img src="img/wiki04.jpg" alt="Astronauta 04"/>
+            <p class="employee-name">XX 01</p>
+            <p class="employee-job"> Especialista de voo em gravidade zero</p>
+        </div>
+    </div>
+   </section>
+   <!--Contato-->
+   <section id="contact" class="text-image-section">
+    <div id="contact-image-container" class="image-container">
+        <img src="img/contact.jpg" alt="Astronauta no Contato"/>
+    </div>    
+    <div id="contact-info" class="text-container">
+        <i class="bi bi-envelope"></i>
+        <p class="section-subtitle">Entre em Contato</p>
+        <form>
+            <div class="form-control"> <!--para nome ficar ao lado de e-mail-->
+                <input type="text" name="name" id="name" placeholder="Nome"/>
+                <input type="email" name="email" id="email" placeholder="E-mail"/>
+            </div>
+            <input type="text" name="fone" id="fone" placeholder="Telefone"/>
+            <textarea name="message" id="message" placeholder="Sua mensagem..."></textarea> <!--Quando é uma mensagem, algo maior-->
+            <input type="submit" value="Enviar" class="btn"/> <!--tipo botão de envio-->
+        </form> <!--Qdo temos integração com backend precisa colocar o  ACTION METHOD-->
+    </div>   
+   </section>
+   <!--Rodapé-->
+   <footer id="footer">
+    <div class="contact-inf">
+        <div class="footer-marca">
+            <h2>Mundo da Lua</h2>
+            <p>Voo certo para Lua</p>
+        </div>
+        <p><i class="bi bi-geo-alt"></i> Rua dos Astronautas, 123</p>            
+        <p><i class="bi bi-telephone"></i> (99) 99999-9999 </p>
+        <p><i class="bi bi-envelope"></i> contato@mundodalua.com</p>  
+        <div class="redes-sociais">
+            <p>Siga-nos:</p>
+            <div class="social">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+            </div> 
+        </div>         
+    </div>   
+     <div class="links-container">
+        <h4>Outros Serviços</h4>
+        <nav>
+            <a href="#">Propiedade Intelectual</a>
+            <a href="#">LGPD</a>
+            <a href="#">Direito Internacional</a>
+            <a href="#">Processos</a>
+        </nav> <!--Nav para ir para outras páginas-->
+     </div>
+     <div class="links-container">
+        <h4>Páginas</h4>
+        <nav>
+            <a href="#">Termos e Condições</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Fale com nossos especialistas</a>
+            <a href="#">FAQ</a>
+        </nav> <!--Nav para ir para outras páginas-->
+     </div>
+     <div class="links-container">
+        <h4>Consulta Grátis</h4>
+        <div class="phone-number">
+            <i class="bi bi-telephone"></i>
+            <p>(99) 99999-9999</p>            
+        </div>
+        <p class="phone-info">Este telefone é especial para tratar de voos já em andamento</p>
+    </div>
+   </footer>
+</body>
+</html>
