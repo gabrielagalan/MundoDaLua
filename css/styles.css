@@ -93,6 +93,8 @@ i {
 
 .banner p {
     font-size: 1.5rem;
+    position: absolute;
+    z-index: 2;
 }
 
 .quadrado {
@@ -543,6 +545,7 @@ i {
 #menu, #close-menu {
     font-size: 2rem;
     padding: 1rem;
+    display: none;
 }
 #close-menu {
     position: absolute;
@@ -552,7 +555,7 @@ i {
 }
 
 #mobile-navbar {
-    position: fixed;
+    position: fixed;    
     top: 0;
     left: 100%;
     height: 100%;
@@ -728,6 +731,11 @@ i {
 
     .links-container h4 {
         margin-bottom: 1.5rem;
+    }
+
+    #menu, #close-menu
+    {
+        display: flex;
     }
 
 }
